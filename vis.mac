@@ -1,0 +1,40 @@
+/control/verbose 2
+/run/verbose 1
+
+/process/em/fluo true
+/process/em/auger true
+/process/em/augerCascade true 
+/process/em/pixe true
+
+/run/setCutForAGivenParticle e- 0.01 mm
+/run/setCutForAGivenParticle gamma 0.01 mm
+
+/process/em/lowestElectronEnergy 1 eV
+
+/cuts/setLowEdge 1 eV
+
+/run/initialize
+
+/vis/open OGL
+
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+/vis/drawVolume
+
+/vis/viewer/set/style wireframe
+
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2 
+
+/vis/scene/add/hits
+
+/vis/scene/endOfEventAction accumulate
+
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+/vis/scene/endOfEventAction accumulate
+/tracking/verbose 1
